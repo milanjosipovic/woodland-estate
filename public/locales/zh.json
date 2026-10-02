@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "高山森林庄园 | 私人庄园"
+  },
+  "nav": {
+    "overview": "项目概览",
+    "specs": "技术指标",
+    "location": "地理位置",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "badge": "私人庄园",
+    "title": "高山森林庄园",
+    "subtitle": "位于塞尔维亚西部，拥有12公顷原生自然风光与辽阔视野"
+  },
+  "specs": {
+    "total_area": "总面积",
+    "forest_area": "森林面积",
+    "meadow_area": "草坪面积",
+    "elevation": "海拔高度",
+    "electricity": "电力设施",
+    "water": "水源供应",
+    "road": "道路状况",
+    "ownership": "产权状况"
+  },
+  "values": {
+    "paved_to_macadam": "柏油路 + 350米碎石路",
+    "on_site": "地块内已接入",
+    "natural_spring": "天然泉水接入口",
+    "clear_no_encumbrance": "1/1 独立产权，无抵押",
+    "agricultural_and_forest": "农业与森林用地"
+  },
+  "contact": {
+    "heading": "索取完整法律文件包",
+    "subheading": "填写表格下载包含地籍数据的详细资料包。",
+    "name": "姓名",
+    "email": "电子邮箱",
+    "phone": "电话 / WhatsApp",
+    "submit": "发送咨询"
+  }
+}
