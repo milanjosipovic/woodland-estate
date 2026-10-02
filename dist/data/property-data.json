@@ -1,0 +1,41 @@
+{
+  "property_id": "woodland-estate-12ha",
+  "pricing": {
+    "currency": "EUR",
+    "amount": 0,
+    "display_price": false
+  },
+  "metrics": {
+    "total_area_ha": 12.0,
+    "total_area_sqm": 120000,
+    "forest_area_ha": 7.2,
+    "meadow_area_ha": 4.8,
+    "elevation_masl": 850
+  },
+  "infrastructure": {
+    "road_access": "paved_to_macadam",
+    "road_distance_main_m": 350,
+    "electricity_connection": "on_site",
+    "water_source": "natural_spring",
+    "mobile_coverage": "4g_lte"
+  },
+  "location": {
+    "country": "Serbia",
+    "region": "Western Serbia",
+    "nearest_city_km": 15,
+    "coordinates": {
+      "lat": 43.856,
+      "lng": 19.842
+    }
+  },
+  "legal": {
+    "cadastral_municipality": "KO Example",
+    "ownership_share": "1/1",
+    "encumbrance_status": "clear_no_encumbrance",
+    "zoning_category": "agricultural_and_forest"
+  },
+  "media": {
+    "drone_video_vimeo_id": "",
+    "gallery_count": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Planinsko Šumsko Imanje | Prirodna Oaza"
+  },
+  "nav": {
+    "overview": "O imanju",
+    "specs": "Karakteristike",
+    "location": "Lokacija",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Privatno Imanje",
+    "title": "Planinsko Šumsko Imanje",
+    "subtitle": "12 Hektara netaknute prirode sa otvorenim pogledom u Zapadnoj Srbiji"
+  },
+  "specs": {
+    "total_area": "Ukupna Površina",
+    "forest_area": "Površina Šume",
+    "meadow_area": "Površina Livade",
+    "elevation": "Nadmorska Visina",
+    "electricity": "Električna Mreža",
+    "water": "Vodosnabdevanje",
+    "road": "Prilazni Put",
+    "ownership": "Vlasništvo"
+  },
+  "values": {
+    "paved_to_macadam": "Asfalt + 350m Makadam",
+    "on_site": "Priključak na placu",
+    "natural_spring": "Sopstveni izvorski priključak",
+    "clear_no_encumbrance": "1/1 Uknjiženo, Bez tereta",
+    "agricultural_and_forest": "Poljoprivredno i Šumsko zemljište"
+  },
+  "contact": {
+    "heading": "Zatražite Detaljnu Dokumentaciju",
+    "subheading": "Popunite formu kako biste preuzeli Informacioni Paket sa katastarskim podacima.",
+    "name": "Vaše Ime i Prezime",
+    "email": "Vaš Email",
+    "phone": "Telefon / WhatsApp",
+    "submit": "Pošaljite Upit"
+  }
+}

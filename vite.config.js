@@ -2,11 +2,12 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig(({ command }) => {
-  const isProd = command === "build";
+export default defineConfig(({ mode }) => {
+  // Only use /woodland-estate/ subpath when building for production (GitHub Pages)
+  const isGitHubPages = mode === "production";
 
   return {
-    base: isProd ? "/woodland-estate/" : "/",
+    base: isGitHubPages ? "/woodland-estate/" : "/",
 
     plugins: [tailwindcss()],
 

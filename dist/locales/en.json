@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Mountain Woodland Estate | Private Sanctuary"
+  },
+  "nav": {
+    "overview": "Overview",
+    "specs": "Specifications",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Private Estate",
+    "title": "Mountain Woodland Estate",
+    "subtitle": "12 Hectares of untouched nature with open views in Western Serbia"
+  },
+  "specs": {
+    "total_area": "Total Area",
+    "forest_area": "Forest Area",
+    "meadow_area": "Meadow Area",
+    "elevation": "Elevation",
+    "electricity": "Electricity",
+    "water": "Water Supply",
+    "road": "Road Access",
+    "ownership": "Ownership"
+  },
+  "values": {
+    "paved_to_macadam": "Paved Road + 350m Macadam",
+    "on_site": "Connection on Plot",
+    "natural_spring": "Private Spring Water",
+    "clear_no_encumbrance": "1/1 Registered, Clear Title",
+    "agricultural_and_forest": "Agricultural & Forest Land"
+  },
+  "contact": {
+    "heading": "Request Legal Dossier",
+    "subheading": "Fill out the form to download the Information Package with cadastral records.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone / WhatsApp",
+    "submit": "Send Inquiry"
+  }
+}
