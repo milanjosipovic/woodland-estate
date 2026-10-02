@@ -4,26 +4,36 @@ export class ContactForm extends HTMLElement {
   connectedCallback() {
     this.render();
 
-    // Re-render when language finishes loading/switching
     i18n.addEventListener("languageLoaded", () => {
       this.render();
     });
   }
 
   render() {
+    const getTranslation = (key, fallback) => {
+      const translated = i18n.t(key);
+      return translated && !translated.startsWith("[MISSING")
+        ? translated
+        : fallback;
+    };
+
     this.innerHTML = `
       <div class="bg-stone-900 text-stone-100 p-8 rounded-2xl shadow-xl max-w-2xl mx-auto border border-stone-800 space-y-6">
         <div>
-          <h2 class="text-2xl font-bold text-emerald-400">${i18n.t("contact.heading")}</h2>
-          <p class="text-stone-400 text-sm mt-2 leading-relaxed">${i18n.t("contact.subheading")}</p>
+          <h2 class="text-2xl font-bold text-emerald-400">
+            ${getTranslation("contact.heading", "Zatražite Detaljnu Dokumentaciju")}
+          </h2>
+          <p class="text-stone-400 text-sm mt-2 leading-relaxed">
+            ${getTranslation("contact.subheading", "Popunite formu kako biste preuzeli Informacioni Paket sa katastarskim podacima.")}
+          </p>
         </div>
 
         <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
-          <input type="hidden" name="submitted_language" value="${i18n.currentLang}" />
+          <input type="hidden" name="submitted_language" value="${i18n.currentLang || "sr"}" />
 
           <div>
             <label class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-1">
-              ${i18n.t("contact.name")}
+              ${getTranslation("contact.name", "Vaše Ime i Prezime")}
             </label>
             <input 
               type="text" 
@@ -35,7 +45,7 @@ export class ContactForm extends HTMLElement {
 
           <div>
             <label class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-1">
-              ${i18n.t("contact.email")}
+              ${getTranslation("contact.email", "Vaš Email")}
             </label>
             <input 
               type="email" 
@@ -47,7 +57,7 @@ export class ContactForm extends HTMLElement {
 
           <div>
             <label class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-1">
-              ${i18n.t("contact.phone")}
+              ${getTranslation("contact.phone", "Telefon / WhatsApp")}
             </label>
             <input 
               type="tel" 
@@ -60,7 +70,7 @@ export class ContactForm extends HTMLElement {
             type="submit" 
             class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all cursor-pointer mt-4 text-sm tracking-wide"
           >
-            ${i18n.t("contact.submit")}
+            ${getTranslation("contact.submit", "Pošaljite Upit")}
           </button>
         </form>
       </div>
