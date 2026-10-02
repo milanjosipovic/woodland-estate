@@ -4,7 +4,6 @@ export class LanguageSwitcher extends HTMLElement {
   connectedCallback() {
     this.render();
 
-    // Re-render when language finishes loading or switching
     i18n.addEventListener("languageLoaded", () => {
       this.render();
     });
@@ -18,7 +17,9 @@ export class LanguageSwitcher extends HTMLElement {
       { code: "zh", label: "中文" },
     ];
 
-    const currentLang = i18n.currentLang || "sr";
+    // Read language from <html lang="..."> attribute or fallback to i18n.currentLang
+    const docLang = document.documentElement.lang || "sr";
+    const currentLang = i18n.currentLang || docLang;
 
     this.innerHTML = `
       <nav class="inline-flex p-1 bg-stone-200/60 rounded-xl gap-1 text-xs font-semibold text-stone-600 border border-stone-200" aria-label="Language selection">
@@ -43,7 +44,6 @@ export class LanguageSwitcher extends HTMLElement {
       </nav>
     `;
 
-    // Attach click handlers to trigger switchLanguage
     this.querySelectorAll("button[data-lang]").forEach((button) => {
       button.addEventListener("click", (e) => {
         const targetLang = e.currentTarget.getAttribute("data-lang");

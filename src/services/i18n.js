@@ -84,13 +84,18 @@ class TranslationManager extends EventTarget {
   }
 
   translateDOM() {
-    // 1. Translate all body elements marked with data-i18n
+    // Sync the root <html lang="..."> attribute
+    if (this.currentLang) {
+      document.documentElement.lang = this.currentLang;
+    }
+
+    // Translate body elements
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       el.textContent = this.t(key);
     });
 
-    // 2. Dynamically update browser tab title if meta key exists
+    // Dynamically update browser tab title
     const pageTitle = this.t("meta.title");
     if (pageTitle && !pageTitle.startsWith("[MISSING")) {
       document.title = pageTitle;
