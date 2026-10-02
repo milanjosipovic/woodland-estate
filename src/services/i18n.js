@@ -23,30 +23,25 @@ class TranslationManager extends EventTarget {
 
   // Load active language dictionary + fallback dictionary
   async init() {
-    try {
-      const baseUrl = import.meta.env.BASE_URL;
+    // Extract language code from URL path (e.g., /woodland-estate/en/ -> "en")
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const supportedLangs = ["en", "ru", "zh"];
 
-      // Load current language dictionary
-      const res = await fetch(`${baseUrl}locales/${this.currentLang}.json`);
-      this.translations = await res.json();
+    const urlLang = pathSegments.find((segment) =>
+      supportedLangs.includes(segment),
+    );
 
-      // Load fallback dictionary (Serbian) if current language is not Serbian
-      if (this.currentLang !== this.fallbackLang) {
-        const fallbackRes = await fetch(
-          `${baseUrl}locales/${this.fallbackLang}.json`,
-        );
-        this.fallbackTranslations = await fallbackRes.json();
-      }
-
-      this.translateDOM();
-      this.dispatchEvent(
-        new CustomEvent("languageLoaded", {
-          detail: { lang: this.currentLang },
-        }),
-      );
-    } catch (error) {
-      console.error("Failed to initialize i18n:", error);
+    if (urlLang) {
+      this.currentLang = urlLang;
+    } else {
+      this.currentLang = this.defaultLang; // "sr"
     }
+
+    await this.loadTranslations(this.currentLang);
+    this.translateDOM();
+    this.dispatchEvent(
+      new CustomEvent("languageLoaded", { detail: this.currentLang }),
+    );
   }
 
   // Hybrid Fallback (Option C in Dev / Option A in Production)
