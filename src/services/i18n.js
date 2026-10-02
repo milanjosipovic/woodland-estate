@@ -2,69 +2,84 @@ class TranslationManager extends EventTarget {
   constructor() {
     super();
     this.supportedLangs = ["sr", "en", "ru", "zh"];
-    this.defaultLang = "sr"; // Root path '/' serves Serbian
-    this.fallbackLang = "sr"; // Fallback language if keys are missing
+    this.defaultLang = "sr";
+    this.fallbackLang = "sr";
 
-    this.currentLang = this.detectLanguageFromPath();
+    this.currentLang = this.defaultLang;
     this.translations = {};
     this.fallbackTranslations = {};
   }
 
-  // Extract language from URL path (/en/ -> 'en', / -> 'sr')
-  detectLanguageFromPath() {
-    const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    const firstSegment = pathSegments[0];
-
-    if (firstSegment && this.supportedLangs.includes(firstSegment)) {
-      return firstSegment;
-    }
-    return this.defaultLang; // Default to 'sr' for root '/'
+  // Safely constructs absolute URLs taking Vite's BASE_URL (e.g. /woodland-estate/) into account
+  getBaseUrl() {
+    const base = import.meta.env.BASE_URL || "/";
+    return base.endsWith("/") ? base : `${base}/`;
   }
 
   // Load active language dictionary + fallback dictionary
   async init() {
-    // Extract language code from URL path (e.g., /woodland-estate/en/ -> "en")
     const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    const supportedLangs = ["en", "ru", "zh"];
+    const supportedSubLangs = ["en", "ru", "zh"];
 
+    // Find if any segment matches our non-default subfolder languages
     const urlLang = pathSegments.find((segment) =>
-      supportedLangs.includes(segment),
+      supportedSubLangs.includes(segment),
     );
 
     if (urlLang) {
       this.currentLang = urlLang;
     } else {
-      this.currentLang = this.defaultLang; // "sr"
+      this.currentLang = this.defaultLang;
     }
 
-    await this.loadTranslations(this.currentLang);
+    const base = this.getBaseUrl();
+
+    try {
+      // 1. Fetch active language JSON
+      const res = await fetch(`${base}locales/${this.currentLang}.json`);
+      if (res.ok) {
+        this.translations = await res.json();
+      }
+
+      // 2. Fetch fallback language JSON (sr.json) if not already active
+      if (this.currentLang !== this.fallbackLang) {
+        const fallbackRes = await fetch(
+          `${base}locales/${this.fallbackLang}.json`,
+        );
+        if (fallbackRes.ok) {
+          this.fallbackTranslations = await fallbackRes.json();
+        }
+      }
+    } catch (err) {
+      console.error("[i18n] Failed loading locale JSON:", err);
+    }
+
     this.translateDOM();
     this.dispatchEvent(
       new CustomEvent("languageLoaded", { detail: this.currentLang }),
     );
   }
 
-  // Hybrid Fallback (Option C in Dev / Option A in Production)
+  // Key lookup helper
   t(key) {
-    // 1. Try active language
     let val = this.getNestedValue(this.translations, key);
     if (val) return val;
 
-    // 2. Fall back to Serbian
     val = this.getNestedValue(this.fallbackTranslations, key);
     if (val) return val;
 
-    // 3. Dev warning vs Prod fallback
     if (import.meta.env.DEV) {
       console.warn(
         `[i18n Dev Warning] Missing key: "${key}" in "${this.currentLang}"`,
       );
       return `[MISSING: ${key}]`;
     }
+
     return key.split(".").pop();
   }
 
   getNestedValue(obj, path) {
+    if (!obj || !path) return null;
     return path.split(".").reduce((o, i) => (o ? o[i] : null), obj);
   }
 
@@ -86,11 +101,7 @@ class TranslationManager extends EventTarget {
   switchLanguage(targetLang) {
     if (targetLang === this.currentLang) return;
 
-    // Ensure base path always ends with a single slash (e.g. "/woodland-estate/")
-    const base = import.meta.env.BASE_URL.endsWith("/")
-      ? import.meta.env.BASE_URL
-      : `${import.meta.env.BASE_URL}/`;
-
+    const base = this.getBaseUrl();
     let targetPath = base;
 
     if (targetLang !== this.defaultLang) {
