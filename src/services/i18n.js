@@ -91,11 +91,15 @@ class TranslationManager extends EventTarget {
   switchLanguage(targetLang) {
     if (targetLang === this.currentLang) return;
 
-    const baseUrl = import.meta.env.BASE_URL;
-    let targetPath = baseUrl;
+    // Ensure base path always ends with a single slash (e.g. "/woodland-estate/")
+    const base = import.meta.env.BASE_URL.endsWith("/")
+      ? import.meta.env.BASE_URL
+      : `${import.meta.env.BASE_URL}/`;
+
+    let targetPath = base;
 
     if (targetLang !== this.defaultLang) {
-      targetPath = `${baseUrl}${targetLang}/`;
+      targetPath = `${base}${targetLang}/`;
     }
 
     window.location.href = targetPath;
