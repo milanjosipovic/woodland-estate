@@ -1,3 +1,15 @@
+import srJSON from "../../public/locales/sr.json";
+import enJSON from "../../public/locales/en.json";
+import ruJSON from "../../public/locales/ru.json";
+import zhJSON from "../../public/locales/zh.json";
+
+const LOCALES = {
+  sr: srJSON,
+  en: enJSON,
+  ru: ruJSON,
+  zh: zhJSON,
+};
+
 class TranslationManager extends EventTarget {
   constructor() {
     super();
@@ -10,49 +22,25 @@ class TranslationManager extends EventTarget {
     this.fallbackTranslations = {};
   }
 
-  // Safely constructs absolute URLs taking Vite's BASE_URL (e.g. /woodland-estate/) into account
   getBaseUrl() {
     const base = import.meta.env.BASE_URL || "/";
     return base.endsWith("/") ? base : `${base}/`;
   }
 
-  // Load active language dictionary + fallback dictionary
   async init() {
     const pathSegments = window.location.pathname.split("/").filter(Boolean);
     const supportedSubLangs = ["en", "ru", "zh"];
 
-    // Find if any segment matches our non-default subfolder languages
+    // Detect language from URL path (e.g. /woodland-estate/en/)
     const urlLang = pathSegments.find((segment) =>
       supportedSubLangs.includes(segment),
     );
 
-    if (urlLang) {
-      this.currentLang = urlLang;
-    } else {
-      this.currentLang = this.defaultLang;
-    }
+    this.currentLang = urlLang || this.defaultLang;
 
-    const base = this.getBaseUrl();
-
-    try {
-      // 1. Fetch active language JSON
-      const res = await fetch(`${base}locales/${this.currentLang}.json`);
-      if (res.ok) {
-        this.translations = await res.json();
-      }
-
-      // 2. Fetch fallback language JSON (sr.json) if not already active
-      if (this.currentLang !== this.fallbackLang) {
-        const fallbackRes = await fetch(
-          `${base}locales/${this.fallbackLang}.json`,
-        );
-        if (fallbackRes.ok) {
-          this.fallbackTranslations = await fallbackRes.json();
-        }
-      }
-    } catch (err) {
-      console.error("[i18n] Failed loading locale JSON:", err);
-    }
+    // Load bundled locale objects directly from memory
+    this.translations = LOCALES[this.currentLang] || LOCALES[this.defaultLang];
+    this.fallbackTranslations = LOCALES[this.fallbackLang];
 
     this.translateDOM();
     this.dispatchEvent(
@@ -60,7 +48,6 @@ class TranslationManager extends EventTarget {
     );
   }
 
-  // Key lookup helper
   t(key) {
     let val = this.getNestedValue(this.translations, key);
     if (val) return val;
@@ -84,25 +71,51 @@ class TranslationManager extends EventTarget {
   }
 
   translateDOM() {
-    // Sync the root <html lang="..."> attribute
+    // 1. Sync HTML root lang
     if (this.currentLang) {
       document.documentElement.lang = this.currentLang;
     }
 
-    // Translate body elements
+    // 2. Text content
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       el.textContent = this.t(key);
     });
 
-    // Dynamically update browser tab title
+    // 3. Input placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      el.setAttribute("placeholder", this.t(key));
+    });
+
+    // 4. Accessibility aria-labels
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria");
+      el.setAttribute("aria-label", this.t(key));
+    });
+
+    // 5. Image alt tags
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-alt");
+      el.setAttribute("alt", this.t(key));
+    });
+
+    // 6. Tab Title
     const pageTitle = this.t("meta.title");
     if (pageTitle && !pageTitle.startsWith("[MISSING")) {
       document.title = pageTitle;
     }
+
+    // 7. Meta Description
+    const metaDesc = this.t("meta.description");
+    if (metaDesc && !metaDesc.startsWith("[MISSING")) {
+      const descEl = document.querySelector('meta[name="description"]');
+      if (descEl) {
+        descEl.setAttribute("content", metaDesc);
+      }
+    }
   }
 
-  // Path redirection helper for language switching
   switchLanguage(targetLang) {
     if (targetLang === this.currentLang) return;
 

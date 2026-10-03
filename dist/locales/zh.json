@@ -14,14 +14,14 @@
     "subtitle": "位于塞尔维亚西部，拥有12公顷原生自然风光与辽阔视野"
   },
   "specs": {
-    "total_area": "总面积",
-    "forest_area": "森林面积",
-    "meadow_area": "草坪面积",
-    "elevation": "海拔高度",
-    "electricity": "电力设施",
-    "water": "水源供应",
-    "road": "道路状况",
-    "ownership": "产权状况"
+    "area": { "category": "面积", "title": "总面积", "value": "12 公顷", "subtitle": "120,000 平方米" },
+    "forest": { "category": "地形", "title": "森林区域", "value": "7.2 公顷", "subtitle": "天然针叶与榉木林" },
+    "meadow": { "category": "地形", "title": "草地与牧场", "value": "4.8 公顷", "subtitle": "开阔向阳山坡" },
+    "elevation": { "category": "地貌", "title": "海拔高度", "value": "850 米", "subtitle": "全景视野与清新空气" },
+    "power": { "category": "基础设施", "title": "电力供应", "value": "接入地块", "subtitle": "稳定三相供电" },
+    "water": { "category": "基础设施", "title": "水源连接", "value": "天然泉水", "subtitle": "地块内独立纯净泉水源" },
+    "access": { "category": "交通", "title": "道路连接", "value": "柏油路 + 350米", "subtitle": "修缮良好碎石路直达" },
+    "legal": { "category": "法律状态", "title": "产权状况", "value": "1/1 完整产权", "subtitle": "无抵押无纠纷，产权清晰" }
   },
   "values": {
     "paved_to_macadam": "柏油路 + 350米碎石路",
@@ -37,5 +37,26 @@
     "email": "电子邮箱",
     "phone": "电话 / WhatsApp",
     "submit": "发送咨询"
+  },
+  "form": {
+    "badge": "法律与地籍数据",
+    "title": "索取完整法律文件包",
+    "subtitle": "填写表格下载包含地籍数据的详细资料包。",
+    "direct_contact": "直接联系业主",
+    "discretion": "严守保密与隐私",
+    "label_name": "您的姓名",
+    "placeholder_name": "例如：张伟",
+    "label_email": "您的电子邮箱",
+    "placeholder_email": "zhangwei@domain.com",
+    "label_phone": "电话 / WHATSAPP",
+    "placeholder_phone": "+86 138 xxxx xxxx",
+    "label_message": "留言或备注（可选）",
+    "placeholder_message": "请输入您的具体疑问...",
+    "submit_btn": "发送申请"
+  },
+  "footer": {
+    "location": "西塞尔维亚 • 12 公顷",
+    "rights": "保留所有权利。",
+    "disclaimer": "业主直售。所提供信息仅供参考。"
   }
 }

@@ -13,16 +13,16 @@
     "title": "Mountain Woodland Estate",
     "subtitle": "12 Hectares of untouched nature with open views in Western Serbia"
   },
-  "specs": {
-    "total_area": "Total Area",
-    "forest_area": "Forest Area",
-    "meadow_area": "Meadow Area",
-    "elevation": "Elevation",
-    "electricity": "Electricity",
-    "water": "Water Supply",
-    "road": "Road Access",
-    "ownership": "Ownership"
-  },
+ "specs": {
+  "area": { "category": "AREA", "title": "TOTAL AREA", "value": "12 ha", "subtitle": "120,000 m²" },
+  "forest": { "category": "TERRAIN", "title": "FOREST COVER", "value": "7.2 ha", "subtitle": "Native coniferous and beech forest" },
+  "meadow": { "category": "TERRAIN", "title": "MEADOWS & PASTURES", "value": "4.8 ha", "subtitle": "Open sunny slopes" },
+  "elevation": { "category": "TOPOGRAPHY", "title": "ELEVATION", "value": "850 m.a.s.l.", "subtitle": "Panoramic views & clean mountain air" },
+  "power": { "category": "INFRASTRUCTURE", "title": "POWER GRID", "value": "On-site Connection", "subtitle": "Stable three-phase power supply" },
+  "water": { "category": "INFRASTRUCTURE", "title": "WATER SUPPLY", "value": "Spring Water", "subtitle": "Private natural pure water spring" },
+  "access": { "category": "ACCESS", "title": "ACCESS ROAD", "value": "Asphalt + 350m", "subtitle": "Maintained gravel access to property" },
+  "legal": { "category": "LEGAL STATUS", "title": "OWNERSHIP", "value": "1/1 Clear Title", "subtitle": "Free of encumbrances & liens" }
+},
   "values": {
     "paved_to_macadam": "Paved Road + 350m Macadam",
     "on_site": "Connection on Plot",
@@ -37,5 +37,26 @@
     "email": "Email Address",
     "phone": "Phone / WhatsApp",
     "submit": "Send Inquiry"
+  },
+  "form": {
+    "badge": "LEGAL & CADASTRAL DATA",
+    "title": "Request Legal Dossier",
+    "subtitle": "Fill out the form to download the Information Package with cadastral records.",
+    "direct_contact": "Direct contact with owner",
+    "discretion": "Full discretion & privacy",
+    "label_name": "YOUR FULL NAME",
+    "placeholder_name": "e.g. John Smith",
+    "label_email": "YOUR EMAIL",
+    "placeholder_email": "john@domain.com",
+    "label_phone": "PHONE / WHATSAPP",
+    "placeholder_phone": "+1 555 0192",
+    "label_message": "MESSAGE OR NOTE (OPTIONAL)",
+    "placeholder_message": "Enter additional questions...",
+    "submit_btn": "SUBMIT REQUEST"
+  },
+  "footer": {
+    "location": "Western Serbia • 12 Hectares",
+    "rights": "All rights reserved.",
+    "disclaimer": "Direct sale from owner. Information is provided for reference only."
   }
 }

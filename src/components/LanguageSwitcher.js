@@ -1,56 +1,47 @@
-import { i18n } from "../services/i18n.js";
-
 export class LanguageSwitcher extends HTMLElement {
   connectedCallback() {
-    this.render();
+    const rawBase = import.meta.env.BASE_URL || "/";
+    const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+    const pathname = window.location.pathname;
 
-    i18n.addEventListener("languageLoaded", () => {
-      this.render();
-    });
-  }
+    // Detect current language relative to base URL
+    let currentLang = "sr";
+    if (pathname.includes(`${base}en/`) || pathname.endsWith("/en"))
+      currentLang = "en";
+    else if (pathname.includes(`${base}ru/`) || pathname.endsWith("/ru"))
+      currentLang = "ru";
+    else if (pathname.includes(`${base}zh/`) || pathname.endsWith("/zh"))
+      currentLang = "zh";
 
-  render() {
     const languages = [
-      { code: "sr", label: "Srpski" },
-      { code: "en", label: "English" },
-      { code: "ru", label: "Русский" },
-      { code: "zh", label: "中文" },
+      { code: "sr", label: "SR", path: base },
+      { code: "en", label: "EN", path: `${base}en/` },
+      { code: "ru", label: "RU", path: `${base}ru/` },
+      { code: "zh", label: "ZH", path: `${base}zh/` },
     ];
 
-    // Read language from <html lang="..."> attribute or fallback to i18n.currentLang
-    const docLang = document.documentElement.lang || "sr";
-    const currentLang = i18n.currentLang || docLang;
-
     this.innerHTML = `
-      <nav class="inline-flex p-1 bg-stone-200/60 rounded-xl gap-1 text-xs font-semibold text-stone-600 border border-stone-200" aria-label="Language selection">
+      <nav aria-label="Language Selector" class="inline-flex items-center gap-1 p-1 bg-white/5 border border-white/10 backdrop-blur-md rounded-none">
         ${languages
           .map((lang) => {
-            const isActive = lang.code === currentLang;
-            const activeClasses =
-              "bg-white text-emerald-950 shadow-xs border border-stone-200/80 font-bold";
-            const inactiveClasses =
-              "text-stone-600 hover:text-stone-900 hover:bg-white/50 border border-transparent";
-
+            const isActive = currentLang === lang.code;
             return `
-              <button 
-                data-lang="${lang.code}"
-                class="px-3 py-1.5 rounded-lg transition-all cursor-pointer ${isActive ? activeClasses : inactiveClasses}"
-              >
+              <a href="${lang.path}" 
+                 class="px-3 py-1.5 text-[11px] font-mono tracking-widest uppercase transition-all duration-300 ${
+                   isActive
+                     ? "bg-[#c5a880] text-[#121413] font-semibold"
+                     : "text-stone-300 hover:text-white hover:bg-white/10"
+                 }">
                 ${lang.label}
-              </button>
+              </a>
             `;
           })
           .join("")}
       </nav>
     `;
-
-    this.querySelectorAll("button[data-lang]").forEach((button) => {
-      button.addEventListener("click", (e) => {
-        const targetLang = e.currentTarget.getAttribute("data-lang");
-        i18n.switchLanguage(targetLang);
-      });
-    });
   }
 }
 
-customElements.define("language-switcher", LanguageSwitcher);
+if (!customElements.get("language-switcher")) {
+  customElements.define("language-switcher", LanguageSwitcher);
+}

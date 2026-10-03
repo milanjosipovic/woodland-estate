@@ -3,40 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planinsko Šumsko Imanje | Prirodna Oaza</title>
-
-    <!-- SEO Hreflang Tags -->
-    <link rel="alternate" hreflang="sr" href="https://example.com/" />
-    <link rel="alternate" hreflang="en" href="https://example.com/en/" />
-    <link rel="alternate" hreflang="ru" href="https://example.com/ru/" />
-    <link rel="alternate" hreflang="zh" href="https://example.com/zh/" />
-    <link rel="alternate" hreflang="x-default" href="https://example.com/" />
+    <title data-i18n="meta.title">
+      Planinsko Šumsko Imanje | Zapadna Srbija
+    </title>
+    <!-- Google Fonts for Playfair Display (Serif) & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-stone-50 text-stone-900 min-h-screen">
-    <main class="max-w-5xl mx-auto p-6 space-y-12">
-      <header
-        class="flex justify-between items-center border-b pb-4 border-stone-200"
-      >
-        <div>
+  <body
+    class="bg-[#f8f7f4] text-[#1a1d1b] antialiased selection:bg-[#c5a880] selection:text-white"
+  >
+    <!-- Header & Hero Section -->
+    <header
+      class="bg-[#121413] text-[#f8f7f4] pt-10 pb-28 px-6 sm:px-12 md:px-16 border-b border-white/10"
+    >
+      <div class="max-w-6xl mx-auto">
+        <!-- Top Navigation Bar -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pb-10 border-b border-white/10"
+        >
+          <div class="space-y-1">
+            <span
+              class="text-[10px] sm:text-xs tracking-[0.25em] uppercase text-[#c5a880] font-medium block"
+            >
+              Zapadna Srbija • West Serbia
+            </span>
+            <p class="text-xs text-stone-400 font-mono tracking-wider">
+              43°51'N 19°50'E • 850m n.v.
+            </p>
+          </div>
+
+          <language-switcher></language-switcher>
+        </div>
+
+        <!-- Hero Main Canvas -->
+        <div class="mt-20 max-w-4xl">
+          <span
+            class="inline-block text-xs font-medium tracking-[0.2em] uppercase text-[#c5a880] mb-4"
+          >
+            Ekskluzivno Imanje
+          </span>
+
           <h1
             data-i18n="hero.title"
-            class="text-3xl font-extrabold text-emerald-950"
-          ></h1>
-          <p data-i18n="hero.subtitle" class="text-stone-600 mt-1"></p>
+            class="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal tracking-tight text-white leading-[1.1] text-balance"
+          >
+            Planinsko Šumsko Imanje
+          </h1>
+
+          <p
+            data-i18n="hero.subtitle"
+            class="mt-8 text-base sm:text-xl text-stone-300 font-light leading-relaxed max-w-2xl"
+          >
+            12 Hektara netaknute prirode sa otvorenim panorama pogledom u
+            Zapadnoj Srbiji.
+          </p>
+
+          <!-- Action Buttons -->
+          <div
+            class="mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
+          >
+            <a
+              href="#dossier"
+              class="inline-flex items-center justify-center px-8 py-4 bg-[#c5a880] hover:bg-white text-[#121413] text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 shadow-sm hover:shadow-md"
+            >
+              Zatražite Dokumentaciju
+            </a>
+
+            <a
+              href="#specs"
+              class="inline-flex items-center justify-center px-8 py-4 border border-white/20 hover:border-white/60 text-white hover:bg-white/5 text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 backdrop-blur-xs"
+            >
+              Specifikacije Placa
+            </a>
+          </div>
         </div>
-        <language-switcher></language-switcher>
-      </header>
+      </div>
+    </header>
 
-      <section
-        class="grid grid-cols-1 md:grid-cols-3 gap-4"
-        id="specs-container"
-      ></section>
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 sm:px-12 md:px-16 py-20" id="specs">
+      <!-- Section Intro -->
+      <div class="max-w-2xl mb-12">
+        <span
+          class="text-xs font-semibold tracking-[0.2em] uppercase text-[#c5a880]"
+        >
+          Tehnički Podaci Placa
+        </span>
+        <h2
+          class="text-3xl sm:text-4xl font-serif text-[#121413] mt-2 tracking-tight"
+        >
+          Ključne Specifikacije
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Pregled infrastrukture, topografije i legalnih parametara obuhvaćenih
+          u 12 hektara.
+        </p>
+      </div>
 
-      <!-- Lead Generation & Legal Request Form -->
-      <section class="pt-6">
-        <contact-form></contact-form>
-      </section>
+      <!-- Spec Cards Web Component -->
+      <spec-card></spec-card>
     </main>
+
+    <!-- PLACEMENT: Dossier Contact Section goes right here -->
+    <section
+      class="max-w-6xl mx-auto px-6 sm:px-12 md:px-16 pb-24"
+      id="dossier"
+    >
+      <contact-form></contact-form>
+    </section>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>

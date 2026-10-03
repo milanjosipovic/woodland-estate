@@ -3,6 +3,7 @@ import { i18n } from "./services/i18n.js";
 import "./components/LanguageSwitcher.js"; // Registers <language-switcher>
 import "./components/SpecCard.js";
 import "./components/ContactForm.js"; // Registers <contact-form>
+import "./components/Footer.js"; // Registers <app-footer>
 
 // Initialize internationalization service on DOM load
 document.addEventListener("DOMContentLoaded", async () => {

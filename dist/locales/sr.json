@@ -37,5 +37,8 @@
     "email": "Vaš Email",
     "phone": "Telefon / WhatsApp",
     "submit": "Pošaljite Upit"
-  }
+  },
+  "footer": {
+  "disclaimer": "Direktna prodaja od vlasnika. Informacije su informativnog karaktera."
+}
 }

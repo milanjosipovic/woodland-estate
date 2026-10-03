@@ -4,34 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mountain Woodland Estate | Private Sanctuary</title>
-    <script type="module" crossorigin src="/woodland-estate/assets/main-3dEe8NT5.js"></script>
-    <link rel="stylesheet" crossorigin href="/woodland-estate/assets/main-D86YUYay.css">
+    <script type="module" crossorigin src="/woodland-estate/assets/main-DdOymC_Z.js"></script>
+    <link rel="stylesheet" crossorigin href="/woodland-estate/assets/main-DBxoo0e2.css">
   </head>
-  <body class="bg-stone-50 text-stone-900 min-h-screen">
-    <main class="max-w-5xl mx-auto p-6 space-y-12">
-      <header
-        class="flex justify-between items-center border-b pb-4 border-stone-200"
-      >
-        <div>
-          <h1
-            data-i18n="hero.title"
-            class="text-3xl font-extrabold text-emerald-950"
-          ></h1>
-          <p data-i18n="hero.subtitle" class="text-stone-600 mt-1"></p>
-        </div>
+  <body
+    class="bg-[#f8f7f4] text-[#121413] min-h-screen selection:bg-[#c5a880] selection:text-white"
+  >
+    <!-- Hero Section -->
+    <header
+      class="relative bg-[#121413] text-[#f8f7f4] pt-24 pb-20 px-6 sm:px-12 md:px-16 overflow-hidden"
+    >
+      <!-- Language Switcher Positioned Top-Right -->
+      <div class="absolute top-6 right-6 sm:right-12 z-20">
         <language-switcher></language-switcher>
-      </header>
+      </div>
 
-      <section
-        class="grid grid-cols-1 md:grid-cols-3 gap-4"
-        id="specs-container"
-      ></section>
+      <div class="max-w-6xl mx-auto relative z-10">
+        <span
+          class="text-xs font-semibold tracking-[0.25em] uppercase text-[#c5a880] block mb-4"
+        >
+          EXCLUSIVE ESTATE
+        </span>
+        <h1
+          class="text-4xl sm:text-6xl md:text-7xl font-serif font-normal tracking-tight leading-none text-white max-w-4xl"
+        >
+          Mountain Woodland Estate
+        </h1>
+        <p
+          class="text-stone-300 text-base sm:text-xl font-light mt-6 max-w-2xl leading-relaxed"
+        >
+          12 Hectares of untouched nature with open views in Western Serbia
+        </p>
 
-      <!-- Lead Generation & Legal Request Form -->
-      <section class="pt-6">
-        <contact-form></contact-form>
-      </section>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="#dossier"
+            class="px-8 py-4 bg-[#c5a880] hover:bg-white text-[#121413] text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 shadow-sm"
+          >
+            REQUEST DOSSIER
+          </a>
+          <a
+            href="#specs"
+            class="px-8 py-4 border border-white/20 hover:border-white text-white text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300"
+          >
+            PROPERTY SPECS
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 sm:px-12 md:px-16 py-20" id="specs">
+      <!-- Section Intro -->
+      <div class="max-w-2xl mb-12">
+        <span
+          class="text-xs font-semibold tracking-[0.2em] uppercase text-[#c5a880]"
+        >
+          Property Technical Data
+        </span>
+        <h2
+          class="text-3xl sm:text-4xl font-serif text-[#121413] mt-2 tracking-tight"
+        >
+          Key Specifications
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Overview of infrastructure, topography, and legal parameters across 12
+          hectares.
+        </p>
+      </div>
+
+      <!-- Spec Cards Web Component -->
+      <spec-card></spec-card>
     </main>
+
+    <!-- Dossier Contact Section -->
+    <section
+      class="max-w-6xl mx-auto px-6 sm:px-12 md:px-16 pb-24"
+      id="dossier"
+    >
+      <contact-form></contact-form>
+    </section>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
 
   </body>
 </html>

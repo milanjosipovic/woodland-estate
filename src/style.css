@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+  /* Serif for editorial headlines, Sans for data and specs */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* Deep organic charcoal and forest tones */
+  --color-aman-dark: #121413;
+  --color-aman-card: #1a1d1b;
+  --color-aman-stone: #f8f7f4;
+  --color-aman-muted: #8e948f;
+  --color-aman-accent: #c5a880;
+}
+
+/* Global Reset & Base Canvas */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-aman-stone);
+  color: #1a1d1b;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
