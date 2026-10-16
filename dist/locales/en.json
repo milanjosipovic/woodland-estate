@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Mountain Woodland Estate | Private Sanctuary"
+    "title": "Mountain Woodland Estate | Private Sanctuary in Nature"
   },
   "nav": {
     "overview": "Overview",
@@ -9,20 +9,34 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Private Estate",
+    "badge": "Exclusive Private Estate",
     "title": "Mountain Woodland Estate",
-    "subtitle": "12 Hectares of untouched nature with open views in Western Serbia"
+    "subtitle": "12 hectares of untouched nature with panoramic views in Western Serbia"
   },
- "specs": {
-  "area": { "category": "AREA", "title": "TOTAL AREA", "value": "12 ha", "subtitle": "120,000 m²" },
-  "forest": { "category": "TERRAIN", "title": "FOREST COVER", "value": "7.2 ha", "subtitle": "Native coniferous and beech forest" },
-  "meadow": { "category": "TERRAIN", "title": "MEADOWS & PASTURES", "value": "4.8 ha", "subtitle": "Open sunny slopes" },
-  "elevation": { "category": "TOPOGRAPHY", "title": "ELEVATION", "value": "850 m.a.s.l.", "subtitle": "Panoramic views & clean mountain air" },
-  "power": { "category": "INFRASTRUCTURE", "title": "POWER GRID", "value": "On-site Connection", "subtitle": "Stable three-phase power supply" },
-  "water": { "category": "INFRASTRUCTURE", "title": "WATER SUPPLY", "value": "Spring Water", "subtitle": "Private natural pure water spring" },
-  "access": { "category": "ACCESS", "title": "ACCESS ROAD", "value": "Asphalt + 350m", "subtitle": "Maintained gravel access to property" },
-  "legal": { "category": "LEGAL STATUS", "title": "OWNERSHIP", "value": "1/1 Clear Title", "subtitle": "Free of encumbrances & liens" }
-},
+  "specs": {
+    "total_area": "Total Area",
+    "forest_area": "Forest Area",
+    "meadow_area": "Meadow Area",
+    "elevation": "Elevation",
+    "electricity": "Power Grid",
+    "water": "Water Supply",
+    "road": "Access Road",
+    "ownership": "Ownership",
+    "area": { "category": "AREA", "title": "TOTAL AREA", "value": "12 ha", "subtitle": "120,000 m²" },
+    "forest": { "category": "TERRAIN", "title": "FOREST COVER", "value": "7.2 ha", "subtitle": "Native coniferous and beech forest" },
+    "meadow": { "category": "TERRAIN", "title": "MEADOWS & PASTURES", "value": "4.8 ha", "subtitle": "Open sunny slopes" },
+    "elevation_detail": { "category": "TOPOGRAPHY", "title": "ELEVATION", "value": "850 m.a.s.l.", "subtitle": "Panoramic views & clean mountain air" },
+    "power": { "category": "INFRASTRUCTURE", "title": "POWER GRID", "value": "On-site Connection", "subtitle": "Stable three-phase power supply" },
+    "water_detail": { "category": "INFRASTRUCTURE", "title": "WATER SUPPLY", "value": "Spring Water", "subtitle": "Private natural pure water spring" },
+    "access": { "category": "ACCESS", "title": "ACCESS ROAD", "value": "Asphalt + 350m", "subtitle": "Maintained gravel access to property" },
+    "legal": { "category": "LEGAL STATUS", "title": "OWNERSHIP", "value": "1/1 Clear Title", "subtitle": "Free of encumbrances & liens" }
+  },
+  "map": {
+    "badge": "LOCATION & ACCESSIBILITY",
+    "title": "Geographic Location",
+    "subtitle": "An exclusive estate positioned in pristine Western Serbia with convenient access to main transport routes.",
+    "popup": "Mountain Woodland Estate (12 ha)"
+  },
   "values": {
     "paved_to_macadam": "Paved Road + 350m Macadam",
     "on_site": "Connection on Plot",
@@ -30,20 +44,12 @@
     "clear_no_encumbrance": "1/1 Registered, Clear Title",
     "agricultural_and_forest": "Agricultural & Forest Land"
   },
-  "contact": {
-    "heading": "Request Legal Dossier",
-    "subheading": "Fill out the form to download the Information Package with cadastral records.",
-    "name": "Full Name",
-    "email": "Email Address",
-    "phone": "Phone / WhatsApp",
-    "submit": "Send Inquiry"
-  },
   "form": {
     "badge": "LEGAL & CADASTRAL DATA",
     "title": "Request Legal Dossier",
-    "subtitle": "Fill out the form to download the Information Package with cadastral records.",
-    "direct_contact": "Direct contact with owner",
-    "discretion": "Full discretion & privacy",
+    "subtitle": "Fill out the form to download the complete title deed, cadastral plan, and land specifications.",
+    "direct_contact": "Direct contact with owner, zero commission",
+    "discretion": "Guaranteed privacy & discretion",
     "label_name": "YOUR FULL NAME",
     "placeholder_name": "e.g. John Smith",
     "label_email": "YOUR EMAIL",
@@ -51,12 +57,25 @@
     "label_phone": "PHONE / WHATSAPP",
     "placeholder_phone": "+1 555 0192",
     "label_message": "MESSAGE OR NOTE (OPTIONAL)",
-    "placeholder_message": "Enter additional questions...",
-    "submit_btn": "SUBMIT REQUEST"
+    "placeholder_message": "Enter your additional questions...",
+    "submit_btn": "SUBMIT REQUEST",
+    "sending": "SENDING...",
+    "success_msg": "Thank you! Your request has been successfully sent. We will contact you shortly.",
+    "error_msg": "An error occurred while sending your message. Please try again or contact us directly."
   },
   "footer": {
     "location": "Western Serbia • 12 Hectares",
     "rights": "All rights reserved.",
-    "disclaimer": "Direct sale from owner. Information is provided for reference only."
+    "disclaimer": "Direct sale from owner. Information is provided for reference only and subject to verification."
+  },
+  "gallery": {
+    "badge": "PROPERTY VISUALS",
+    "title": "Photo Gallery & Terrain",
+    "subtitle": "Authentic views of the surrounding nature, forest land, and terrain topography across the entire 12-hectare estate.",
+    "img1_alt": "Estate overview and landscape",
+    "img2_alt": "Natural environment and surrounding flora",
+    "img3_alt": "Forest area and trees",
+    "img4_alt": "Meadows and land contours",
+    "img5_alt": "Panoramic view of surroundings"
   }
 }

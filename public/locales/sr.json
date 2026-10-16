@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Planinsko Šumsko Imanje | Prirodna Oaza"
+    "title": "Planinsko Šumsko Imanje | Privatna Oaza u Prirodi"
   },
   "nav": {
     "overview": "O imanju",
@@ -9,9 +9,9 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "badge": "Privatno Imanje",
+    "badge": "Ekskluzivno Privatno Imanje",
     "title": "Planinsko Šumsko Imanje",
-    "subtitle": "12 Hektara netaknute prirode sa otvorenim pogledom u Zapadnoj Srbiji"
+    "subtitle": "12 hektara netaknute prirode sa panoramskim pogledom u srcu Zapadne Srbije"
   },
   "specs": {
     "total_area": "Ukupna Površina",
@@ -23,22 +23,49 @@
     "road": "Prilazni Put",
     "ownership": "Vlasništvo"
   },
-  "values": {
-    "paved_to_macadam": "Asfalt + 350m Makadam",
-    "on_site": "Priključak na placu",
-    "natural_spring": "Sopstveni izvorski priključak",
-    "clear_no_encumbrance": "1/1 Uknjiženo, Bez tereta",
-    "agricultural_and_forest": "Poljoprivredno i Šumsko zemljište"
+  "map": {
+    "badge": "LOKACIJA I PRISTUPAČNOST",
+    "title": "Geografski Položaj",
+    "subtitle": "Izuzetna lokacija u mirnom okruženju Zapadne Srbije, sa odličnom povezanošću i lakim pristupom glavnim putnim pravcima.",
+    "popup": "Planinsko Šumsko Imanje (12 ha)"
   },
-  "contact": {
-    "heading": "Zatražite Detaljnu Dokumentaciju",
-    "subheading": "Popunite formu kako biste preuzeli Informacioni Paket sa katastarskim podacima.",
-    "name": "Vaše Ime i Prezime",
-    "email": "Vaš Email",
-    "phone": "Telefon / WhatsApp",
-    "submit": "Pošaljite Upit"
+  "values": {
+    "paved_to_macadam": "Asfaltni put + 350m urednog makadama",
+    "on_site": "Priključak na samom placu",
+    "natural_spring": "Sopstveni izvorski priključak",
+    "clear_no_encumbrance": "1/1 Uknjiženo, Bez tereta i hipoteka",
+    "agricultural_and_forest": "Poljoprivredno i šumsko zemljište"
+  },
+  "form": {
+    "badge": "PRAVNI I KATASTARSKI PODACI",
+    "title": "Zatražite Detaljnu Dokumentaciju",
+    "subtitle": "Popunite formu za preuzimanje kompletnog vlasničkog lista, kopije plana i informacija o parceli.",
+    "direct_contact": "Direktan kontakt sa vlasnikom bez provizije",
+    "discretion": "Garantovana privatnost i diskrecija",
+    "label_name": "VAŠE IME I PREZIME",
+    "placeholder_name": "npr. Aleksandar Jovanović",
+    "label_email": "VAŠ EMAIL",
+    "placeholder_email": "aleksandar@domena.rs",
+    "label_phone": "TELEFON / WHATSAPP",
+    "placeholder_phone": "+381 6x xxx xxxx",
+    "label_message": "PORUKA ILI DODATNI ZAHTEV (OPCIONO)",
+    "placeholder_message": "Unesite vaša pitanja u vezi sa imanjem...",
+    "submit_btn": "POŠALJITE ZAHTEV",
+    "sending": "SLANJE U TOKU...",
+    "success_msg": "Hvala vam! Vaš zahtev je uspešno poslat. Stupićemo u kontakt sa vama u najkraćem roku.",
+    "error_msg": "Došlo je do greške prilikom slanja. Molimo vas pokušajte ponovo ili nas kontaktirajte direktno."
   },
   "footer": {
-  "disclaimer": "Direktna prodaja od vlasnika. Informacije su informativnog karaktera."
-}
+    "disclaimer": "Direktna prodaja od vlasnika. Sve informacije su informativnog karaktera i podložne proveri."
+  },
+  "gallery": {
+    "badge": "VIZUELNI PRIKAZ IMANJA",
+    "title": "Fotogalerija i Teren",
+    "subtitle": "Autentični prikazi prirodnog okruženja, šumskih parcela i topografije imanja obuhvaćenog u celini od 12 hektara.",
+    "img1_alt": "Pogled na imanje i pejzaž",
+    "img2_alt": "Prirodno okruženje i vegetacija",
+    "img3_alt": "Šumski pojas i stabla",
+    "img4_alt": "Livade i konfiguracija terena",
+    "img5_alt": "Panoramski prikaz okoline"
+  }
 }

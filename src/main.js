@@ -4,6 +4,8 @@ import "./components/LanguageSwitcher.js"; // Registers <language-switcher>
 import "./components/SpecCard.js";
 import "./components/ContactForm.js"; // Registers <contact-form>
 import "./components/Footer.js"; // Registers <app-footer>
+import "./components/ImageGallery.js"; // Register image gallery component
+import "./components/PropertyMap.js";
 
 // Initialize internationalization service on DOM load
 document.addEventListener("DOMContentLoaded", async () => {
