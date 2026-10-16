@@ -21,7 +21,15 @@
     "electricity": "Električna Mreža",
     "water": "Vodosnabdevanje",
     "road": "Prilazni Put",
-    "ownership": "Vlasništvo"
+    "ownership": "Vlasništvo",
+    "area": { "category": "POVRŠINA", "title": "UKUPNA POVRŠINA", "value": "12 ha", "subtitle": "120.000 m²" },
+    "forest": { "category": "TEREN", "title": "ŠUMSKI POJAS", "value": "7.2 ha", "subtitle": "Autentična četinarska i bukova šuma" },
+    "meadow": { "category": "TEREN", "title": "LIVADE & PAŠNJACI", "value": "4.8 ha", "subtitle": "Otvorene sunčane padine" },
+    "elevation_detail": { "category": "TOPOGRAFIJA", "title": "NADMORSKA VISINA", "value": "850 m.n.v.", "subtitle": "Panoramski pogled i čist planinski vazduh" },
+    "power": { "category": "INFRASTRUKTURA", "title": "ELEKTRIČNA MREŽA", "value": "Priključak na Placu", "subtitle": "Stabilno trofazno napajanje" },
+    "water_detail": { "category": "INFRASTRUKTURA", "title": "VODOSNABDEVANJE", "value": "Izvorski Priključak", "subtitle": "Sopstveni prirodni izvor čiste vode" },
+    "access": { "category": "PRISTUP", "title": "PRILAZNI PUT", "value": "Asfalt + 350m", "subtitle": "Uređen makadamski prilaz do imanja" },
+    "legal": { "category": "PRAVNI STATUS", "title": "VLASNIŠTVO", "value": "1/1 Uknjiženo", "subtitle": "Bez tereta i zabeležbi, čist vlasnički list" }
   },
   "map": {
     "badge": "LOKACIJA I PRISTUPAČNOST",
@@ -30,12 +38,12 @@
     "popup": "Planinsko Šumsko Imanje (12 ha)"
   },
   "values": {
-    "paved_to_macadam": "Asfaltni put + 350m urednog makadama",
-    "on_site": "Priključak na samom placu",
-    "natural_spring": "Sopstveni izvorski priključak",
-    "clear_no_encumbrance": "1/1 Uknjiženo, Bez tereta i hipoteka",
-    "agricultural_and_forest": "Poljoprivredno i šumsko zemljište"
-  },
+  "paved_to_macadam": "Asfalt + 350m Makadam",
+  "on_site": "Priključak na Placu",
+  "natural_spring": "Izvorski Priključak",
+  "clear_no_encumbrance": "1/1 Uknjiženo",
+  "agricultural_and_forest": "Poljoprivredno i šumsko zemljište"
+},
   "form": {
     "badge": "PRAVNI I KATASTARSKI PODACI",
     "title": "Zatražite Detaljnu Dokumentaciju",

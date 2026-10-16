@@ -38,12 +38,12 @@
     "popup": "高山森林庄园（12公顷）"
   },
   "values": {
-    "paved_to_macadam": "柏油路 + 350米碎石路",
-    "on_site": "地块内已接入",
-    "natural_spring": "天然泉水接入口",
-    "clear_no_encumbrance": "1/1 独立产权，无抵押",
-    "agricultural_and_forest": "农业与森林用地"
-  },
+  "paved_to_macadam": "柏油路 + 350米碎石路",
+  "on_site": "地块已接入",
+  "natural_spring": "独立泉水接入",
+  "clear_no_encumbrance": "1/1 完整产权",
+  "agricultural_and_forest": "农业与森林用地"
+},
   "form": {
     "badge": "法律与地籍数据",
     "title": "索取完整法律文件包",

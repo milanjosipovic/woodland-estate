@@ -38,12 +38,12 @@
     "popup": "Mountain Woodland Estate (12 ha)"
   },
   "values": {
-    "paved_to_macadam": "Paved Road + 350m Macadam",
-    "on_site": "Connection on Plot",
-    "natural_spring": "Private Spring Water",
-    "clear_no_encumbrance": "1/1 Registered, Clear Title",
-    "agricultural_and_forest": "Agricultural & Forest Land"
-  },
+  "paved_to_macadam": "Asphalt + 350m Macadam",
+  "on_site": "On-site Connection",
+  "natural_spring": "Spring Connection",
+  "clear_no_encumbrance": "1/1 Clear Title",
+  "agricultural_and_forest": "Agricultural & Forest Land"
+},
   "form": {
     "badge": "LEGAL & CADASTRAL DATA",
     "title": "Request Legal Dossier",

@@ -38,12 +38,12 @@
     "popup": "Planinsko Šumsko Imanje (12 ha)"
   },
   "values": {
-    "paved_to_macadam": "Asfaltni put + 350m urednog makadama",
-    "on_site": "Priključak na samom placu",
-    "natural_spring": "Sopstveni izvorski priključak",
-    "clear_no_encumbrance": "1/1 Uknjiženo, Bez tereta i hipoteka",
-    "agricultural_and_forest": "Poljoprivredno i šumsko zemljište"
-  },
+  "paved_to_macadam": "Asfalt + 350m Makadam",
+  "on_site": "Priključak na Placu",
+  "natural_spring": "Izvorski Priključak",
+  "clear_no_encumbrance": "1/1 Uknjiženo",
+  "agricultural_and_forest": "Poljoprivredno i šumsko zemljište"
+},
   "form": {
     "badge": "PRAVNI I KATASTARSKI PODACI",
     "title": "Zatražite Detaljnu Dokumentaciju",

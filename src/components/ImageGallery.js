@@ -36,25 +36,32 @@ export class ImageGallery extends HTMLElement {
       return translated;
     };
 
+    const getAssetUrl = (path) => {
+      const base = import.meta.env.BASE_URL || "/";
+      const cleanBase = base.endsWith("/") ? base : `${base}/`;
+      const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+      return `${cleanBase}${cleanPath}`;
+    };
+
     const images = [
       {
-        src: `${import.meta.env.BASE_URL}images/1.jpg`,
+        src: getAssetUrl("images/1.jpg"),
         alt: getTranslation("gallery.img1_alt", "Pogled na imanje"),
       },
       {
-        src: `${import.meta.env.BASE_URL}images/2.jpg`,
+        src: getAssetUrl("images/2.jpg"),
         alt: getTranslation("gallery.img2_alt", "Priroda i okruženje"),
       },
       {
-        src: `${import.meta.env.BASE_URL}images/3.jpg`,
+        src: getAssetUrl("images/3.jpg"),
         alt: getTranslation("gallery.img3_alt", "Šumski pojas"),
       },
       {
-        src: `${import.meta.env.BASE_URL}images/4.jpg`,
+        src: getAssetUrl("images/4.jpg"),
         alt: getTranslation("gallery.img4_alt", "Livade i teren"),
       },
       {
-        src: `${import.meta.env.BASE_URL}images/5.jpg`,
+        src: getAssetUrl("images/5.jpg"),
         alt: getTranslation("gallery.img5_alt", "Panoramski prikaz"),
       },
     ];
@@ -169,25 +176,32 @@ export class ImageGallery extends HTMLElement {
   }
 
   initSwiper() {
-    const swiperEl = this.querySelector(".main-swiper");
-    if (!swiperEl) return;
+    if (this.swiperInstance) {
+      this.swiperInstance.destroy(true, true);
+      this.swiperInstance = null;
+    }
 
-    new Swiper(swiperEl, {
-      modules: [Navigation, Pagination, EffectFade],
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      loop: true,
-      autoplay: false,
-      pagination: {
-        el: this.querySelector(".swiper-pagination"),
-        clickable: true,
-      },
-      navigation: {
-        nextEl: this.querySelector(".swiper-button-next"),
-        prevEl: this.querySelector(".swiper-button-prev"),
-      },
+    requestAnimationFrame(() => {
+      const swiperEl = this.querySelector(".main-swiper");
+      if (!swiperEl) return;
+
+      this.swiperInstance = new Swiper(swiperEl, {
+        modules: [Navigation, Pagination, EffectFade],
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        loop: true,
+        autoplay: false,
+        pagination: {
+          el: this.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: this.querySelector(".swiper-button-next"),
+          prevEl: this.querySelector(".swiper-button-prev"),
+        },
+      });
     });
   }
 }
