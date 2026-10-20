@@ -68,9 +68,27 @@ export class PropertyMap extends HTMLElement {
           border-radius: 2px !important;
           padding: 8px 12px !important;
           border-top: 2px solid #c5a880 !important;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
         }
         .leaflet-popup-tip {
           background-color: #121413 !important;
+        }
+        @keyframes pin-pulse {
+          0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.7);
+          }
+          70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(197, 168, 128, 0);
+          }
+          100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(197, 168, 128, 0);
+          }
+        }
+        .luxury-map-pin-pulse {
+          animation: pin-pulse 2s infinite;
         }
       </style>
     `;
@@ -86,11 +104,11 @@ export class PropertyMap extends HTMLElement {
       this._mapInstance = null;
     }
 
-    const estateCoords = [43.8583, 18.8333];
+    const estateCoords = [43.89129, 19.781953];
 
     this._mapInstance = L.map(mapEl, {
       center: estateCoords,
-      zoom: 11,
+      zoom: 12,
       scrollWheelZoom: false,
     });
 
@@ -100,22 +118,26 @@ export class PropertyMap extends HTMLElement {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this._mapInstance);
 
+    // Sleek, compact pin design (24x24px) with subtle golden border & pulsing glow
     const customIcon = L.divIcon({
       className: "custom-map-pin",
       html: `
-      <div class="w-8 h-8 bg-[#121413] border-2 border-[#c5a880] rounded-full flex items-center justify-center shadow-lg">
-        <span class="w-2.5 h-2.5 bg-[#c5a880] rounded-full"></span>
-      </div>
-    `,
-      iconSize: [32, 32],
-      iconAnchor: [16, 16],
+        <div class="relative flex items-center justify-center w-6 h-6">
+          <div class="absolute inset-0 bg-[#c5a880] rounded-full opacity-40 luxury-map-pin-pulse"></div>
+          <div class="relative w-5 h-5 bg-[#121413] border-[1.5px] border-[#c5a880] rounded-full flex items-center justify-center shadow-md">
+            <span class="w-1.5 h-1.5 bg-[#c5a880] rounded-full"></span>
+          </div>
+        </div>
+      `,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12],
     });
 
-    const popupText = i18n.t("map.popup") || "Planinsko Šumsko Imanje (12 ha)";
+    const popupText = i18n.t("map.popup") || "Imanje 2.17 ha";
     L.marker(estateCoords, { icon: customIcon })
       .addTo(this._mapInstance)
       .bindPopup(
-        `<div class="font-serif text-sm font-semibold text-[#c5a880]">${popupText}</div>`,
+        `<div class="font-serif text-xs font-semibold text-[#c5a880] tracking-wide">${popupText}</div>`,
       );
   }
 }
