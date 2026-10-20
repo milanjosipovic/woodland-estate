@@ -2,12 +2,11 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig(({ mode }) => {
-  // Only use /woodland-estate/ subpath when building for production (GitHub Pages)
-  const isGitHubPages = mode === "production";
-
+export default defineConfig(() => {
   return {
-    base: isGitHubPages ? "/woodland-estate/" : "/",
+    // Since you are using a root custom domain (prodajaimanjauzice.rs),
+    // the base path must always be root ("/")
+    base: "/",
 
     plugins: [tailwindcss()],
 
