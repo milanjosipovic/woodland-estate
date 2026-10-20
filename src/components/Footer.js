@@ -11,7 +11,7 @@ export class Footer extends HTMLElement {
   }
 
   render() {
-    const getTranslation = (key, fallback) => {
+    const getTranslation = (key) => {
       const translated = i18n.t(key);
       const lastKeyPart = key.split(".").pop();
 
@@ -21,7 +21,7 @@ export class Footer extends HTMLElement {
         translated.startsWith("[MISSING") ||
         translated === lastKeyPart
       ) {
-        return fallback;
+        return ""; // Return empty or let i18n return key rather than forcing Serbian
       }
       return translated;
     };
@@ -33,17 +33,17 @@ export class Footer extends HTMLElement {
         <div class="max-w-6xl mx-auto px-6 sm:px-12 md:px-16 flex flex-col sm:flex-row justify-between items-center gap-6">
           <div>
             <p class="font-serif text-sm font-semibold text-[#121413]">
-              ${getTranslation("meta.title", "Planinsko Šumsko Imanje")}
+              ${getTranslation("meta.title")}
             </p>
             <p class="text-stone-400 mt-1">
-              ${getTranslation("footer.location", "Zapadna Srbija • 12 Hektara")}
+              ${getTranslation("footer.location")}
             </p>
           </div>
           
           <div class="text-center sm:text-right text-stone-400 space-y-1">
-            <p>&copy; ${currentYear} ${getTranslation("footer.rights", "Sva prava zadržana.")}</p>
+            <p>&copy; ${currentYear} ${getTranslation("footer.rights")}</p>
             <p class="text-[11px]">
-              ${getTranslation("footer.disclaimer", "Direktna prodaja od vlasnika. Informacije su informativnog karaktera.")}
+              ${getTranslation("footer.disclaimer")}
             </p>
           </div>
         </div>

@@ -64,6 +64,22 @@ export class ImageGallery extends HTMLElement {
         src: getAssetUrl("images/5.jpg"),
         alt: getTranslation("gallery.img5_alt", "Panoramski prikaz"),
       },
+      {
+        src: getAssetUrl("images/6.jpg"),
+        alt: getTranslation("gallery.img6_alt", "Panoramski prikaz"),
+      },
+      {
+        src: getAssetUrl("images/7.jpg"),
+        alt: getTranslation("gallery.img7_alt", "Panoramski prikaz"),
+      },
+      {
+        src: getAssetUrl("images/8.jpg"),
+        alt: getTranslation("gallery.img8_alt", "Panoramski prikaz"),
+      },
+      {
+        src: getAssetUrl("images/9.jpg"),
+        alt: getTranslation("gallery.img9_alt", "Panoramski prikaz"),
+      },
     ];
 
     this.innerHTML = `

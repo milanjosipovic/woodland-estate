@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Planinsko Šumsko Imanje | Privatna Oaza u Prirodi"
+    "title": "Privatna Oaza u Prirodi"
   },
   "nav": {
     "overview": "O imanju",
@@ -10,8 +10,8 @@
   },
   "hero": {
     "badge": "Ekskluzivno Privatno Imanje",
-    "title": "Planinsko Šumsko Imanje",
-    "subtitle": "12 hektara netaknute prirode sa panoramskim pogledom u srcu Zapadne Srbije"
+    "title": "Imanje pored planinskog potoka sa plantažom lešnika i voćnjakom",
+    "subtitle": "2 hektara i 17 ari netaknute prirode sa panoramskim pogledom u srcu Zapadne Srbije"
   },
   "specs": {
     "total_area": "Ukupna Površina",
@@ -22,32 +22,41 @@
     "water": "Vodosnabdevanje",
     "road": "Prilazni Put",
     "ownership": "Vlasništvo",
-    "area": { "category": "POVRŠINA", "title": "UKUPNA POVRŠINA", "value": "12 ha", "subtitle": "120.000 m²" },
-    "forest": { "category": "TEREN", "title": "ŠUMSKI POJAS", "value": "7.2 ha", "subtitle": "Autentična četinarska i bukova šuma" },
-    "meadow": { "category": "TEREN", "title": "LIVADE & PAŠNJACI", "value": "4.8 ha", "subtitle": "Otvorene sunčane padine" },
-    "elevation_detail": { "category": "TOPOGRAFIJA", "title": "NADMORSKA VISINA", "value": "850 m.n.v.", "subtitle": "Panoramski pogled i čist planinski vazduh" },
-    "power": { "category": "INFRASTRUKTURA", "title": "ELEKTRIČNA MREŽA", "value": "Priključak na Placu", "subtitle": "Stabilno trofazno napajanje" },
+    "area": 
+    
+    { "category": "POVRŠINA", "title": "UKUPNA POVRŠINA", "value": "2 ha", "subtitle": "2.170 m²" },
+
+    "forest": { "category": "TEREN", "title": "VOĆNJAK", "value": "1.7 ha", "subtitle": "Lešnik i mešani voćnjak" },
+
+    "meadow": { "category": "TEREN", "title": "LIVADE & PAŠNJACI", "value": "0.5 ha", "subtitle": "Pogodno za ribnjake, plastenike i za turističke objekte" },
+
+    "elevation_detail": { "category": "TOPOGRAFIJA", "title": "NADMORSKA VISINA", "value": "600 m.n.v.", "subtitle": "Panoramski pogled i čist planinski vazduh" },
+
+    "power": { "category": "Lokacija", "title": "Blizina Tare i Zlatibora", "value": "Udaljenost 10 minuta od Užica", "subtitle": "Smešteno u blizini glavnih turističkih destinacija" },
+
     "water_detail": { "category": "INFRASTRUKTURA", "title": "VODOSNABDEVANJE", "value": "Izvorski Priključak", "subtitle": "Sopstveni prirodni izvor čiste vode" },
-    "access": { "category": "PRISTUP", "title": "PRILAZNI PUT", "value": "Asfalt + 350m", "subtitle": "Uređen makadamski prilaz do imanja" },
+
+    "access": { "category": "PRISTUP", "title": "PRILAZNI PUT", "value": "Asfalt + 100m", "subtitle": "Uređen makadamski prilaz do imanja" },
+
     "legal": { "category": "PRAVNI STATUS", "title": "VLASNIŠTVO", "value": "1/1 Uknjiženo", "subtitle": "Bez tereta i zabeležbi, čist vlasnički list" }
   },
   "map": {
     "badge": "LOKACIJA I PRISTUPAČNOST",
     "title": "Geografski Položaj",
     "subtitle": "Izuzetna lokacija u mirnom okruženju Zapadne Srbije, sa odličnom povezanošću i lakim pristupom glavnim putnim pravcima.",
-    "popup": "Planinsko Šumsko Imanje (12 ha)"
+    "popup": "Imanje pored planinskog potoka sa plantažom lešnika i voćnjakom 2 ha"
   },
   "values": {
-  "paved_to_macadam": "Asfalt + 350m Makadam",
+  "paved_to_macadam": "Asfalt + 100m Makadam",
   "on_site": "Priključak na Placu",
   "natural_spring": "Izvorski Priključak",
   "clear_no_encumbrance": "1/1 Uknjiženo",
   "agricultural_and_forest": "Poljoprivredno i šumsko zemljište"
 },
   "form": {
-    "badge": "PRAVNI I KATASTARSKI PODACI",
-    "title": "Zatražite Detaljnu Dokumentaciju",
-    "subtitle": "Popunite formu za preuzimanje kompletnog vlasničkog lista, kopije plana i informacija o parceli.",
+    "badge": "Kontakt",
+    "title": "Pišite za detaljniju konsultaciju",
+    "subtitle": "Popunite formu za kontakt u vezi sa kompletnim vlasničkim listom, kopijom plana i informacijama o parceli.",
     "direct_contact": "Direktan kontakt sa vlasnikom bez provizije",
     "discretion": "Garantovana privatnost i diskrecija",
     "label_name": "VAŠE IME I PREZIME",
@@ -64,12 +73,14 @@
     "error_msg": "Došlo je do greške prilikom slanja. Molimo vas pokušajte ponovo ili nas kontaktirajte direktno."
   },
   "footer": {
-    "disclaimer": "Direktna prodaja od vlasnika. Sve informacije su informativnog karaktera i podložne proveri."
-  },
+  "location": "Zapadna Srbija • 2.17 Hektara",
+  "rights": "Sva prava zadržana.",
+  "disclaimer": "Direktna prodaja od vlasnika. Sve informacije su informativnog karaktera i podložne proveri."
+},
   "gallery": {
     "badge": "VIZUELNI PRIKAZ IMANJA",
     "title": "Fotogalerija i Teren",
-    "subtitle": "Autentični prikazi prirodnog okruženja, šumskih parcela i topografije imanja obuhvaćenog u celini od 12 hektara.",
+    "subtitle": "Autentični prikazi prirodnog okruženja, šumskih parcela i topografije imanja obuhvaćenog u celini od 2 hektara.",
     "img1_alt": "Pogled na imanje i pejzaž",
     "img2_alt": "Prirodno okruženje i vegetacija",
     "img3_alt": "Šumski pojas i stabla",
